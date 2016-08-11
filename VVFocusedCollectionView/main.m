@@ -2,8 +2,8 @@
 //  main.m
 //  VVFocusedCollectionView
 //
-//  Created by Work on 8/11/16.
-//  Copyright © 2016 Work. All rights reserved.
+//  Created by Vivi Yang on 8/11/16.
+//  Copyright © 2016 Vivi Yang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

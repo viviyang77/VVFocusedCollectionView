@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  VVFocusedCollectionView
 //
-//  Created by Work on 8/11/16.
-//  Copyright © 2016 Work. All rights reserved.
+//  Created by Vivi Yang on 8/11/16.
+//  Copyright © 2016 Vivi Yang. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    return YES;
-}
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window.rootViewController = [[ViewController alloc] init];
+    [window makeKeyAndVisible];
+    self.window = window;
+    
+    return YES;}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
