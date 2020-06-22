@@ -7,16 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442FF5C524A0853000203EA6 /* VVFocusedCollectionViewCellSizeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FF5C224A0853000203EA6 /* VVFocusedCollectionViewCellSizeObject.swift */; };
+		442FF5C624A0853000203EA6 /* VVFocusedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FF5C324A0853000203EA6 /* VVFocusedCollectionViewLayout.swift */; };
+		442FF5C724A0853000203EA6 /* VVFocusedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FF5C424A0853000203EA6 /* VVFocusedCollectionView.swift */; };
+		442FF5C924A0859D00203EA6 /* CollectionViewCell+VVFocusedCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FF5C824A0859D00203EA6 /* CollectionViewCell+VVFocusedCollectionViewCellProtocol.swift */; };
 		966D90A51D5C633F00659AD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D90A41D5C633F00659AD4 /* main.m */; };
 		966D90A81D5C633F00659AD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D90A71D5C633F00659AD4 /* AppDelegate.m */; };
 		966D90AB1D5C633F00659AD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D90AA1D5C633F00659AD4 /* ViewController.m */; };
 		966D90B01D5C633F00659AD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966D90AF1D5C633F00659AD4 /* Assets.xcassets */; };
 		966D90B31D5C633F00659AD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966D90B11D5C633F00659AD4 /* LaunchScreen.storyboard */; };
 		966D90BC1D5C63D900659AD4 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D90BB1D5C63D900659AD4 /* CollectionViewCell.m */; };
-		966D90C21D5C649F00659AD4 /* VVFocusedCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D90C11D5C649F00659AD4 /* VVFocusedCollectionViewLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442FF5C124A0852F00203EA6 /* VVFocusedCollectionView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VVFocusedCollectionView-Bridging-Header.h"; sourceTree = "<group>"; };
+		442FF5C224A0853000203EA6 /* VVFocusedCollectionViewCellSizeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVFocusedCollectionViewCellSizeObject.swift; sourceTree = "<group>"; };
+		442FF5C324A0853000203EA6 /* VVFocusedCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVFocusedCollectionViewLayout.swift; sourceTree = "<group>"; };
+		442FF5C424A0853000203EA6 /* VVFocusedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVFocusedCollectionView.swift; sourceTree = "<group>"; };
+		442FF5C824A0859D00203EA6 /* CollectionViewCell+VVFocusedCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+VVFocusedCollectionViewCellProtocol.swift"; sourceTree = "<group>"; };
 		966D90A01D5C633F00659AD4 /* VVFocusedCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VVFocusedCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966D90A41D5C633F00659AD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		966D90A61D5C633F00659AD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,8 +36,6 @@
 		966D90B41D5C633F00659AD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966D90BA1D5C63D900659AD4 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		966D90BB1D5C63D900659AD4 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
-		966D90C01D5C649F00659AD4 /* VVFocusedCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVFocusedCollectionViewLayout.h; sourceTree = "<group>"; };
-		966D90C11D5C649F00659AD4 /* VVFocusedCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVFocusedCollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +68,21 @@
 		966D90A21D5C633F00659AD4 /* VVFocusedCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				966D90C01D5C649F00659AD4 /* VVFocusedCollectionViewLayout.h */,
-				966D90C11D5C649F00659AD4 /* VVFocusedCollectionViewLayout.m */,
 				966D90A61D5C633F00659AD4 /* AppDelegate.h */,
 				966D90A71D5C633F00659AD4 /* AppDelegate.m */,
 				966D90A91D5C633F00659AD4 /* ViewController.h */,
 				966D90AA1D5C633F00659AD4 /* ViewController.m */,
+				442FF5C424A0853000203EA6 /* VVFocusedCollectionView.swift */,
+				442FF5C224A0853000203EA6 /* VVFocusedCollectionViewCellSizeObject.swift */,
+				442FF5C324A0853000203EA6 /* VVFocusedCollectionViewLayout.swift */,
 				966D90AF1D5C633F00659AD4 /* Assets.xcassets */,
 				966D90B11D5C633F00659AD4 /* LaunchScreen.storyboard */,
 				966D90B41D5C633F00659AD4 /* Info.plist */,
 				966D90A31D5C633F00659AD4 /* Supporting Files */,
 				966D90BA1D5C63D900659AD4 /* CollectionViewCell.h */,
 				966D90BB1D5C63D900659AD4 /* CollectionViewCell.m */,
+				442FF5C824A0859D00203EA6 /* CollectionViewCell+VVFocusedCollectionViewCellProtocol.swift */,
+				442FF5C124A0852F00203EA6 /* VVFocusedCollectionView-Bridging-Header.h */,
 			);
 			path = VVFocusedCollectionView;
 			sourceTree = "<group>";
@@ -117,12 +126,13 @@
 				TargetAttributes = {
 					966D909F1D5C633F00659AD4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
 			buildConfigurationList = 966D909B1D5C633F00659AD4 /* Build configuration list for PBXProject "VVFocusedCollectionView" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -155,11 +165,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442FF5C624A0853000203EA6 /* VVFocusedCollectionViewLayout.swift in Sources */,
 				966D90AB1D5C633F00659AD4 /* ViewController.m in Sources */,
+				442FF5C524A0853000203EA6 /* VVFocusedCollectionViewCellSizeObject.swift in Sources */,
 				966D90A81D5C633F00659AD4 /* AppDelegate.m in Sources */,
-				966D90C21D5C649F00659AD4 /* VVFocusedCollectionViewLayout.m in Sources */,
 				966D90BC1D5C63D900659AD4 /* CollectionViewCell.m in Sources */,
+				442FF5C724A0853000203EA6 /* VVFocusedCollectionView.swift in Sources */,
 				966D90A51D5C633F00659AD4 /* main.m in Sources */,
+				442FF5C924A0859D00203EA6 /* CollectionViewCell+VVFocusedCollectionViewCellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,11 +277,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = VVFocusedCollectionView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VVFocusedCollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VVFocusedCollectionView/VVFocusedCollectionView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -277,11 +294,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = VVFocusedCollectionView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VVFocusedCollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VVFocusedCollectionView/VVFocusedCollectionView-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -304,6 +324,7 @@
 				966D90B91D5C633F00659AD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

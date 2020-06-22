@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class VVFocusedCollectionViewCellSizeObject;
 
 @interface CollectionViewCell : UICollectionViewCell
 
-@property (strong, nonatomic) UILabel *smallLabel;
-@property (strong, nonatomic) UILabel *largeLabel;
+@property (strong, nonatomic) UIView *cardView;
+@property (strong, nonatomic) UILabel *textLabel;
 
-+ (void)setSmallCellSide:(CGFloat)smallCellSide largeCellSide:(CGFloat)largeCellSide;
-
-- (void)setLabelsWithPercentage:(CGFloat)percentage;
+- (void)setCollectionViewCellSizeObject:(VVFocusedCollectionViewCellSizeObject *)cellSizeObject;
+- (void)adjustViewWithPercentage:(CGFloat)percentage NS_SWIFT_NAME(adjustView(percentage:));
 
 @end
+
