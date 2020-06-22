@@ -1,5 +1,5 @@
 # VVFocusedCollectionView
-This demo shows a horizontal collection view with one cell larger than others during scrolling. The cell has two labels that will switch to each other while scrolling.
+This demo shows a horizontal collection view with one cell larger than others during scrolling.
 
-![Screencast](http://i.giphy.com/3o7TKswCz12qqHVVZK.gif "VVFocusedCollectionView")
+![Screencast](https://i.imgur.com/2zuWQ8w.jpg "VVFocusedCollectionView")
 
