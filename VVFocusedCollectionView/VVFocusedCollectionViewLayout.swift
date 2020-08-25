@@ -27,8 +27,8 @@ class VVFocusedCollectionViewLayout: UICollectionViewFlowLayout {
             return CGSize(width: width, height: collectionViewHeight)
         } else {
             let widthUpToFirstCell = cellSizeObject.firstCellPrecedingSpacing + cellSizeObject.largeCellSize.width
-            let widthAfterFistCell = (cellSizeObject.cellSpacing + cellSizeObject.smallCellSize.width) * CGFloat(itemCount - 1)
-            let width = widthUpToFirstCell + widthAfterFistCell
+            let widthAfterFirstCell = (cellSizeObject.cellSpacing + cellSizeObject.smallCellSize.width) * CGFloat(itemCount - 1)
+            let width = widthUpToFirstCell + widthAfterFirstCell
             return CGSize(width: width, height: collectionViewHeight)
         }
     }
@@ -98,7 +98,7 @@ class VVFocusedCollectionViewLayout: UICollectionViewFlowLayout {
             
             if index == focusedIndex {
                 distance = abs(anchorX - x)
-                maxDistance = cellSizeObject.smallCellSize.width
+                maxDistance = cellSizeObject.smallCellSize.width + cellSizeObject.cellSpacing
                 percentage = max(0, min(1, 1 - distance / maxDistance))
                 
                 w = cellSizeObject.smallCellSize.width + percentage * maxDiffInSize

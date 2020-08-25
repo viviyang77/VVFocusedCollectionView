@@ -58,30 +58,7 @@ class VVFocusedCollectionView: UICollectionView {
             }
         }
         
-        let totalHeightDifference = cellSizeObject.largeCellSize.height - cellSizeObject.smallCellSize.height
-        
-        let indexPath = IndexPath(item: index, section: 0)
-        if let focusedCell = cellForItem(at: indexPath) as? VVFocusedCollectionViewCellProtocol {
-            let heightDifference = focusedCell.frame.height - cellSizeObject.smallCellSize.height
-            let percentage = max(0, heightDifference / totalHeightDifference)
-            focusedCell.adjustView(percentage: percentage)
-        }
-        
-        if index + 1 < numberOfItems(inSection: 0) {
-            let indexPath = IndexPath(item: index + 1, section: 0)
-            if let nextCell = cellForItem(at: indexPath) as? VVFocusedCollectionViewCellProtocol {
-                let heightDifference = nextCell.frame.height - cellSizeObject.smallCellSize.height
-                let percentage = max(0, heightDifference / totalHeightDifference)
-                nextCell.adjustView(percentage: percentage)
-            }
-        }
-        
-        if index + 2 < numberOfItems(inSection: 0) {
-            let indexPath = IndexPath(item: index + 2, section: 0)
-            if let secondNextCell = cellForItem(at: indexPath) as? VVFocusedCollectionViewCellProtocol {
-                secondNextCell.adjustView(percentage: 0)
-            }
-        }
+        adjustCellViews(currentIndex: index)
     }
     
     func willEndDragging(velocity: CGPoint,
@@ -139,5 +116,54 @@ class VVFocusedCollectionView: UICollectionView {
         focusedCellIndex = indexPath.item
         scrollRectToVisible(CGRect(x: x, y: contentOffset.y, width: width, height: 1),
                             animated: animated)
+    }
+    
+    /// To be called after reloadData, to prevent the case where cells are reused and views are not properly adjusted
+    func adjustCellViews(currentIndex: Int) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            let totalHeightDifference = self.cellSizeObject.largeCellSize.height - self.cellSizeObject.smallCellSize.height
+
+            let indexPath = IndexPath(item: currentIndex, section: 0)
+            if let focusedCell = self.cellForItem(at: indexPath) as? VVFocusedCollectionViewCellProtocol {
+                let heightDifference = focusedCell.frame.height - self.cellSizeObject.smallCellSize.height
+                let percentage = max(0, heightDifference / totalHeightDifference)
+                focusedCell.adjustView(percentage: percentage)
+            }
+            
+            if currentIndex - 1 >= 0 {
+                let indexPath = IndexPath(item: currentIndex - 1, section: 0)
+                if let previousCell = self.cellForItem(at: indexPath) as? VVFocusedCollectionViewCellProtocol {
+                    let heightDifference = previousCell.frame.height - self.cellSizeObject.smallCellSize.height
+                    let percentage = max(0, heightDifference / totalHeightDifference)
+                    previousCell.adjustView(percentage: percentage)
+                }
+            }
+            
+            if currentIndex + 1 < self.numberOfItems(inSection: 0) {
+                let indexPath = IndexPath(item: currentIndex + 1, section: 0)
+                if let nextCell = self.cellForItem(at: indexPath) as? VVFocusedCollectionViewCellProtocol {
+                    let heightDifference = nextCell.frame.height - self.cellSizeObject.smallCellSize.height
+                    let percentage = max(0, heightDifference / totalHeightDifference)
+                    nextCell.adjustView(percentage: percentage)
+                }
+            }
+            
+            if currentIndex + 2 < self.numberOfItems(inSection: 0) {
+                let indexPath = IndexPath(item: currentIndex + 2, section: 0)
+                if let secondNextCell = self.cellForItem(at: indexPath) as? VVFocusedCollectionViewCellProtocol {
+                    secondNextCell.adjustView(percentage: 0)
+                }
+            }
+        }
+    }
+    
+    /// It's recommended to call this function when data source count may change
+    func resetFocusedCellIndexIfNeeded() {
+        // Needs to get the most correct number of items, thus we get count from self.dataSource
+        guard let count = dataSource?.collectionView(self, numberOfItemsInSection: 0) else { return }
+        let targetIndex = max(0, min(focusedCellIndex, count - 1))
+        focusedCellIndex = targetIndex
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 @objcMembers
 class VVFocusedCollectionViewCellSizeObject: NSObject {
     
+    // Default values
     private var largeCellWidthRatio: CGFloat = 0.3      // large cell width / screen width
     private var smallLargeCellRatio: CGFloat = 0.8      // small cell height / large cell height
     private var cellHeightWidthRatio: CGFloat = 4 / 3   // cell height / cell width
